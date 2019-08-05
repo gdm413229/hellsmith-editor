@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/gdm413229/hellsmith_gtk3">
+    <file>hellsmith_editor_gtk3-window.ui</file>
+  </gresource>
+</gresources>

@@ -1,0 +1,4 @@
+data/gdm413229.hellsmith_gtk3.desktop.in
+data/gdm413229.hellsmith_gtk3.appdata.xml.in
+data/gdm413229.hellsmith_gtk3.gschema.xml
+src/hellsmith_editor_gtk3-window.ui
