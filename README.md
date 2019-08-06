@@ -1,6 +1,6 @@
 # Hellsmith (GTK3)
 
-Hellsmith is an editor for GZDoom archives and maps.  The project is conceived as a Linux counterpart to the Windows-exclusive GZDoom Builder.  The original vision was to be integrated into GZDoom.
+Hellsmith is an editor for GZDoom archives and maps.  The project is conceived as a Linux counterpart to the Windows-exclusive GZDoom Builder.  The original vision was to be a union of SLADE and GZDoom Builder integrated into GZDoom.
 
 ## The Legend of the Hellsmith (gdm413229's version)
 
@@ -8,9 +8,17 @@ The Hellsmith is the chief architect of Hell.  His most famous masterpiece is He
 
 The map editor is named after one of Hell's great architects as it allows you to create a wide variety of maps, including demon strongholds and man-made cities corrupted by Hell's legions.
 
+## The Great Workflow
+
+See TODO for details.
+
 ## Rendering Architecture
 
 The GZDoom renderer abstraction layers take the brunt of the rendering call processing instead of the Windows-exclusive SlimDX.
+
+## First Party Code
+
+The GTK3-based interface and scrgut (that tool that takes in big pics and xml's and barfs out little imgs) are completely written from scratch.
 
 ## Third Party Code
 

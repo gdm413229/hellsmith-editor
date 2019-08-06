@@ -21,13 +21,16 @@ ANVIL_NAME := hateanvil_$(ARCHITECTURE).a
 
 HAMMER_NAME := vilehammer_$(ARCHITECTURE).a
 
-## Godsend, an internal name for GZDoom's HW API layer.  Freedom from Windows when this takes off!
+## Godsend, an internal name for a custom variant of GZDoom's HW API layer.
+
+## SlimDX can burn forever in fire and brimstone!
 
 GODSEND_NAME := godsend_$(ARCHITECTURE).a
 
 
 CC := gcc
-CXXFLAGS := -O3 -fexpensive-optimizations
+CFLAGS := -O3 -mtune=i486 -fexpensive-optimizations
+CXXFLAGS := $(CFLAGS)
 STATICLIB_LDFLAGS := -l
 LDFLAGS := -lSDL_image -lSDL_mixer -lzlib -I.$(STATICLIB_PATHPREFIX) $(STATICLIB_LDFLAGS)
 ARFLAGS := rcs
@@ -38,7 +41,7 @@ SCRGUT_NAME := scrgut.$(ARCHITECTURE)
 
 SOURCES := src/main.cpp \
 		src/core/wad/wadlib.cpp \
-		src/core/doom_gfxlib.cpp \
+		src/core/doom_imglib.cpp \
 		src/core/doom_maplib.cpp \
 		src/core/hexen_maplib.cpp \
 		src/core/udmf_maplib.cpp \
@@ -77,3 +80,18 @@ GZEXTRA_SRC := gzstuff/gz_parser.cpp \
 		gzstuff/gztext.cpp \
 		
 GZEXTRA_OBJ := $(GZEXTRA_SRC:.cpp=.o)
+
+all: obj data $(NAME)
+
+$(NAME):
+
+scrgut: libxml2
+	$(CC) $(CFLAGS) `pkg-config --cflags --libs MagickWand`
+
+static_libs:
+	mkdir -p $(STATICLIB_PATHPREFIX)
+	ar $(ARFLAGS) $(STATICLIB_PATHPREFIX)/$(GZEXTRA_NAME) $(GZEXTRA_OBJ)
+
+
+.PHONY: all,scrgut,libxml2,static_libs,clean
+.NOTPARALLEL: libxml2,clean
