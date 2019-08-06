@@ -29,8 +29,10 @@ GODSEND_NAME := godsend_$(ARCHITECTURE).a
 CC := gcc
 CXXFLAGS := -O3 -fexpensive-optimizations
 STATICLIB_LDFLAGS := -l
-LDFLAGS := -lSDL_image -lSDL_mixer -lzlib -I./static_libs $(STATICLIB_LDFLAGS)
+LDFLAGS := -lSDL_image -lSDL_mixer -lzlib -I.$(STATICLIB_PATHPREFIX) $(STATICLIB_LDFLAGS)
 ARFLAGS := rcs
+
+SCRGUT_NAME := scrgut.$(ARCHITECTURE)
 
 ## WAD.cs and Lump.cs are being ported and coalesced into wadlib.cpp/hpp.
 

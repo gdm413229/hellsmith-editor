@@ -6,4 +6,8 @@ Turn C# into C++
 
 Cast DirectX's iron grasp into Hell (that is accomplished with reusing GZDoom's GL/Vk abstraction layer)
 
-Design a consistent interface
+Design a consistent interface based on GTK
+
+Make a new set of extra icons
+
+Write the documentation
