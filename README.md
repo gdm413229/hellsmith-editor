@@ -16,4 +16,4 @@ GZDoom Builder-Bugfix's repository is situated at https://github.com/jewalky/GZD
 
 ## Rendering Architecture
 
-The GZDoom renderer abstraction layers take the brunt of the rendering workload instead of the Windows-exclusive SlimDX.
+The GZDoom renderer abstraction layers take the brunt of the rendering call processing instead of the Windows-exclusive SlimDX.
