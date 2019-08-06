@@ -1,9 +1,21 @@
 NAME := hellsmith-gtk.$(ARCHITECTURE)
 GZEXTRA_NAME := libgzextra_$(ARCHITECTURE).a
 GFXLIB_NAME := libsmithgfx_$(ARCHITECTURE).a
+
+## Hell Forge, the name for the map editor essentials.
+
 FORGE_NAME := hellforge_$(ARCHITECTURE).a
+
+## Anvil of Hate, the name for the map editor canvas engine.
+
 ANVIL_NAME := hateanvil_$(ARCHITECTURE).a
+
+## Vile Hammer, the built-in tool set of the map editor.
+
 HAMMER_NAME := vilehammer_$(ARCHITECTURE).a
+
+## Godsend, an internal name for GZDoom's HW API layer.
+
 GODSEND_NAME := godsend_$(ARCHITECTURE).a
 
 
@@ -38,7 +50,7 @@ GFXLIB_SRC := gfxlib/vector.cpp \
 		2d/line2d.cpp \
 		2d/frustum2d.cpp \
 		3d/line3d.cpp \
-		3d/
+		3d/sidedef.cpp
 
 GZEXTRA_SRC := gzstuff/gz_parser.cpp \
 		gzstuff/glowflats.cpp \
