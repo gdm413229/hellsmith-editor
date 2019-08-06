@@ -1,0 +1,9 @@
+The Unholy TODO List of the Hellsmith
+
+Populate the sources as specified by Makefile
+
+Turn C# into C++
+
+Cast DirectX's iron grasp into Hell (that is accomplished with reusing GZDoom's GL/Vk abstraction layer)
+
+Design a consistent interface
