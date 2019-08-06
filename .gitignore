@@ -1,0 +1,4 @@
+# Ignore the binary static libs
+static_libs/
+# Ignore the editor binaries
+hellsmith-editor-.*
