@@ -5,16 +5,15 @@
  *
  * */
 
-scrgut_status_t crop_img(void* image_ptr) {
-
+scrgut_status_t crop_img(MagickWand* basewand_ptr) {
+  MagickWand workwand=CloneMagickWand(basewand_ptr);
   return SCRGUT_SUCCESS;
 }
 
 int main(uint32_t argc,char** argv) {
   MagickWand *bigimg = NULL;
-  MagickWandGenesis;
-
-  MagickWandTerminus;
+  MagickWandGenesis();
+  MagickWandTerminus();
   return EXIT_SUCCESS;
 }
 

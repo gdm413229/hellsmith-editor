@@ -1,10 +1,12 @@
-The Unholy TODO List of the Hellsmith
+The Unholy TODO List of the Hellsmith (for me and the other coders involved in the project)
 
 Populate the sources as specified by Makefile
 
 Turn C# into C++, for architectures that don't have suitable Common Language Runtimes
 
-Cast DirectX's iron grasp into /dev/null for all eternity! (that is accomplished with using a custom variant of GZDoom's GL/Vk abstraction layer)
+Cast DirectX's iron grasp into /dev/null for all eternity! (that is accomplished with using a custom variant of GZDoom's GL/Vk abstraction layer, located at `src/vendor/gzdoom`)
+
+Track down dem GLSL shaders from GZDoom
 
 Design a consistent interface based on GTK
 

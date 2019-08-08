@@ -1,6 +1,11 @@
 # Hellsmith (GTK3)
 
-Hellsmith is an editor for GZDoom archives and maps.  The project is conceived as a Linux counterpart to the Windows-exclusive GZDoom Builder.  The original vision was to be a union of SLADE and GZDoom Builder integrated into GZDoom.
+Hellsmith is an editor for GZDoom archives and maps.  The project is an effort to give Linux users an editor that's on par or in some cases, superior to the Windows-exclusive GZDoom Builder.  The original vision was to be a union of SLADE and GZDoom Builder integrated into GZDoom.
+
+## What makes Hellsmith superior to GZDoom Builder?
+
+ * No need for a Common Language Runtime (more conservative on RAM and makes the editor run on many more CPUs!)
+ * Original "Carmack" Renderer (preview your vanilla DOOM maps the way Mr. Carmack intended!)
 
 ## The Legend of the Hellsmith (gdm413229's version)
 
@@ -22,4 +27,8 @@ The GTK3-based interface and scrgut (that tool that takes in big pics and xml's 
 
 ## Third Party Code
 
-This project uses third party code located in `src/vendor`.  The sources of libxml2 are located in `src/libxml2-2.9.7`.  The original C# code from GZDB is made by CodeImp, MaxED and jewalky.
+This project uses third party code located in `src/vendor`.  The sources of libxml2 are located in `src/libxml2-2.9.7`.
+
+A custom variant of GZDoom's rendering code is located at `src/vendor/gzdoom`
+
+The original C# code from GZDB is made by CodeImp, MaxED and jewalky.

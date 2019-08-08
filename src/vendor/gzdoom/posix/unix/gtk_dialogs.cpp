@@ -31,6 +31,8 @@
 **
 */
 
+/* This src file will not be used by Hellsmith-gtk as it uses it's own first-party interface code. [gdm413229] */
+
 #ifndef NO_GTK
 
 #if !DYN_GTK

@@ -33,6 +33,8 @@
 **
 */
 
+/* This src file will not be used by Hellsmith-gtk. [gdm413229] */
+
 #include <sys/stat.h>
 #include <sys/types.h>
 #include "i_system.h"
