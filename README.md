@@ -19,7 +19,7 @@ See TODO for details.
 
 ## Rendering Architecture
 
-The GZDoom renderer abstraction layers take the brunt of the rendering call processing instead of the Windows-exclusive SlimDX.
+The GZDoom renderer abstraction layers take the brunt of the rendering call processing instead of the Windows-exclusive SlimDX.  The Carmack renderer is used for a map preview that's faithful to the original '93 game.  The SoftPoly renderer is used to give those with dinosaur GPUs the ability to use this map editor.
 
 ## First Party Code
 
@@ -32,3 +32,8 @@ This project uses third party code located in `src/vendor`.  The sources of libx
 A custom variant of GZDoom's rendering code is located at `src/vendor/gzdoom`
 
 The original C# code from GZDB is made by CodeImp, MaxED and jewalky.
+
+## Help with Development
+
+If you need help with the C# to C++ translation process, you can ask questions and answer them on [Stack Overflow](https://stackoverflow.com).
+
