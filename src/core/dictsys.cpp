@@ -1,6 +1,9 @@
 
 /* Hellsmith Editor : Dictionary System (Source) */
 
+/* Excuse me for reinventing the wheel to avoid dependency hell
+ * with dinosaur C++ compilers and runtime libraries. */
+
 #include "dictsys.hpp"
 
 SmithDict::SmithDict() {
