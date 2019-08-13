@@ -122,7 +122,7 @@ STATIC_LIBS := $(GFXLIB_NAME) \
 		$(FORGE_NAME) \
 		$(ANVIL_NAME) \
 		$(GODSEND_NAME) \
-		$(VISMODE_SRC)
+		$(VISMODE_NAME)
 
 GODSEND_SRC := $(wildcard src/vendor/gzdoom/rendering/2d/*.cpp) \
 		$(wildcard src/vendor/gzdoom/rendering/gl/*.cpp) \
