@@ -9,6 +9,23 @@
 #include <string>
 
 
+class SmithWAD_Record {
+	private:
+	
+	bool record_dirty; // if true, we known that record needs to be saved.
+	
+	public:
+	
+	/* The func below answers the `is this record dirty?`
+	 * question. */
+	
+	bool GetDirtyStatus();
+	
+	SmithWAD_Record();
+	
+	~SmithWAD_Record();
+};
+
 class SmithWAD_RecordList {
 
 private:
@@ -32,6 +49,9 @@ bool isIWAD,isOfficialIWAD,dirty,readonly;
 std::string filename;
 
 SmithWAD();
+
+// GOAL: code equivalent to GZDB-BF's `WADReader` class as overload ctor
+SmithWAD(std::string inputname);
 
 ~SmithWAD();
 };

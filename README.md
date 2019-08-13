@@ -31,7 +31,7 @@ This project uses third party code located in `src/vendor`.  The sources of libx
 
 A custom variant of GZDoom's rendering code is located at `src/vendor/gzdoom`
 
-The original C# code from GZDB is made by CodeImp, MaxED and jewalky.
+The original C# code from GZDB is made by CodeImp, MaxED and jewalky (jewalky is a GitHub handle).
 
 ## Help with Development
 
