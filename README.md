@@ -19,7 +19,7 @@ The version 1.x series of the Hellsmith Editor will be named after the seven chu
 
 ### Version 1.0 (Ephesus)
 
- * First release
+ * First stable release
  * Linux mappers are now able to unleash their full potential with this release. (if it delivers)
 
 ### Version 1.1 (Smyrna)
