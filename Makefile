@@ -26,17 +26,6 @@ HAMMER_NAME := vilehammer_$(ARCHITECTURE).a
 
 ## Godsend, an internal name (Hellsmith Editor-specific codename) for a custom variant of GZDoom's HW API layer.
 
-## SlimDX can chug down oceans of bleach!!!
-
-## You know what spirit made M$ develop DirectX!?
-## Quite certain that Mammon and King Paimon were involved in DirectX's conception.
-
-## This variant of GZDoom's HW abstraction layer will dispel that vile
-## sorcery from Bill Gates in 1995!
-## Even Bill Gates' wife is a witch! (Iran considers DirectX "sorcery and witchcraft"!)
-
-## I'm absolutely looking forward to Windows' descent into Hell.
-
 GODSEND_NAME := godsend_$(ARCHITECTURE).a
 
 ## Purified Visual Mode : A cross-platform reincarnation of GZDB's visual mode.
