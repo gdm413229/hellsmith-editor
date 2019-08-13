@@ -46,12 +46,13 @@ VISMODE_NAME := libvismode_$(ARCHITECTURE).a
 
 CC := gcc
 CXX := g++
-CFLAGS := -O3 -mtune=i486 -fexpensive-optimizations
+STRIP := strip
+CFLAGS := -g -O3 -mtune=i486 -fexpensive-optimizations
 CXXFLAGS := $(CFLAGS)
 STATICLIB_LDFLAGS := -l
-SCRGUT_CFLAGS := -O3 -mtune=i386
-SCRGUT_LIBS := `pkg-config --libs `
-PKGCONF_LIBS := zlib gl
+SCRGUT_CFLAGS := -g -O3 -mtune=i386
+SCRGUT_LIBS := `pkg-config --libs MagickWand-7.Q16HDRI`
+PKGCONF_LIBS := gtkmm-3.0 zlib gl
 LDFLAGS := -I.$(STATICLIB_PATHPREFIX) $(STATICLIB_LDFLAGS) `pkg-config --libs $(PKGCONF_LIBS)`
 ARFLAGS := rcs
 
@@ -161,6 +162,7 @@ STATIC_LIB_OBJ := $(FORGE_OBJ) \
 all: $(OBJS) $(DATA) $(NAME)
 
 $(NAME):
+	
 
 scrgut_obj: libxml2
 	$(CC) $(CFLAGS) `pkg-config --cflags --libs MagickWand`

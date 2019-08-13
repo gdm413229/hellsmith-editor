@@ -13,6 +13,23 @@ The Hellsmith is the chief architect of Hell.  His most famous masterpiece is He
 
 The map editor is named after one of Hell's great architects as it allows you to create a wide variety of maps, including demon strongholds and man-made cities corrupted by Hell's legions.
 
+## Planned Version Names
+
+The version 1.x series of the Hellsmith Editor will be named after the seven churches of Revelation.
+
+### Version 1.0 (Ephesus)
+
+ * First release
+ * Linux mappers are now able to unleash their full potential with this release. (if it delivers)
+
+### Version 1.1 (Smyrna)
+
+### Version 1.2 (Pergamum)
+
+### Version 1.3 (Thyatira)
+
+ * Add a software renderer capable of PBR materials and spot lights
+
 ## The Great Workflow
 
 See TODO for details.
