@@ -28,7 +28,7 @@ The version 1.x series of the Hellsmith Editor will be named after the seven chu
 
 ### Version 1.3 (Thyatira)
 
- * Add a software renderer capable of PBR materials and spot lights
+ * Add a software renderer capable of rendering PBR materials and spot lights
 
 ## The Great Workflow
 
