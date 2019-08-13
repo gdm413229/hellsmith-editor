@@ -41,7 +41,7 @@ SmithWAD::~SmithWAD() {
    * END
    *  */
   if(this.dirty) {
-	  
+	  // TODO: add WAD writing code
 	  }
   delete this.record_list;
 }

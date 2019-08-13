@@ -30,6 +30,8 @@ class SmithWAD_RecordList {
 
 private:
 
+bool isdisposed;
+
 public:
 
 SmithWAD_RecordList(); // declare the ctor
