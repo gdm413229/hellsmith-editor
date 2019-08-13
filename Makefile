@@ -1,3 +1,5 @@
+## TODO: create Makefiles for BSD make and Solaris make
+
 ## get build architecture id
 
 ARCHITECTURE := $(shell uname -m)
