@@ -11,8 +11,7 @@ typedef struct{
 	std::string key_name;
 	uint64_t key_size;
 	std::string key_contents;
-}
- dict_keyval;
+}dict_keyval;
 
 class SmithDict {
 
@@ -20,7 +19,7 @@ private:
 
 uint64_t top_index,num_indexes;
 
-dict_keyval[] entries;
+dict_keyval entries[];
 
 void mkhash(dict_keyval* key_to_be_hashed,dict_keyval* dest);
 
