@@ -7,6 +7,7 @@
 
 #include <cstdlib> // for malloc() and free()
 #include <string>
+#include "../core/dataread.hpp"
 
 
 class SmithWAD_Record {
@@ -49,6 +50,8 @@ public:
 
 bool isIWAD,isOfficialIWAD,dirty,readonly;
 std::string filename;
+
+void WriteHeaders();
 
 SmithWAD();
 

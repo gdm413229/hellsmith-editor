@@ -13,3 +13,5 @@ Design a consistent interface based on GTK
 Make a new set of extra icons (assisted by a new tool called scrgut)
 
 Write the documentation (for yelp, GNOME's help viewer and a man page for it's command line switches)
+
+Create non-GTK interfaces for the editor. (uses a unique font!)

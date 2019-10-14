@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "hellsmith_editor_gtk3-window.h"
+#include "ui/hellsmith_editor_gtk3-window.h"
 
 static void
 on_activate (Glib::RefPtr<Gtk::Application> app)
@@ -45,7 +45,7 @@ main (int argc, char *argv[])
 	// application windows, integration with the window manager/compositor, and
 	// desktop features such as file opening and single-instance applications.
 	Glib::RefPtr<Gtk::Application> app =
-		Gtk::Application::create("gdm413229.hellsmith_gtk3", Gio::APPLICATION_FLAGS_NONE);
+		Gtk::Application::create("gdm413229.doom.hellsmith_gtk3", Gio::APPLICATION_FLAGS_NONE);
 
 	// We connect to the activate signal to create a window when the application
 	// has been lauched. Additionally, this signal notifies us when the user

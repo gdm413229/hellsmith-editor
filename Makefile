@@ -1,5 +1,9 @@
 ## TODO: create Makefiles for BSD make and Solaris make
 
+## Configurables
+
+DEBUG ?= TRUE ## Set this to false for release builds.
+
 ## get build architecture id
 
 ARCHITECTURE := $(shell uname -m)
@@ -10,9 +14,11 @@ CHILD_MAKE_JOBS := $((origin CHILD_MAKE_JOBS))
 NAME := hellsmith-gtk.$(ARCHITECTURE)
 
 STATICLIB_PATHPREFIX := ./static_libs
+STATICLIB_NAMEPREFIX := lib
 
 GZEXTRA_NAME := libgzextra_$(ARCHITECTURE).a
 GFXLIB_NAME := libsmithgfx_$(ARCHITECTURE).a
+GFXLIB_IRIS_NAME := libsmithgfx_iris_$(ARCHITECTURE).a
 
 ## Hell Forge, the name for the map editor essentials.
 
@@ -22,13 +28,23 @@ FORGE_NAME := hellforge_$(ARCHITECTURE).a
 
 ANVIL_NAME := hateanvil_$(ARCHITECTURE).a
 
+## Lite version for the map loader for approval.
+
+LITEANVIL_NAME := anvil_lite_$(ARCHITECTURE).a
+
 ## Vile Hammer, the built-in tool set of the map editor.
 
 HAMMER_NAME := vilehammer_$(ARCHITECTURE).a
 
+## Begone, SlimDX! SlimDX uses DirectX, an OS lock-in tactic that may be solely created just for evil.
+
 ## Godsend, an internal name (Hellsmith Editor-specific codename) for a custom variant of GZDoom's HW API layer.
 
 GODSEND_NAME := godsend_$(ARCHITECTURE).a
+
+## OpenGL 1.x version for those with ancient hardware (fixed function!) and SGI workstations :)
+
+IRIS_GODSEND_NAME := irisgodsend_$(ARCHITECTURE).a
 
 ## Purified Visual Mode : A cross-platform reincarnation of GZDB's visual mode.
 ## The Purified Visual Mode is built as a static lib prior to the big link.
@@ -38,12 +54,12 @@ VISMODE_NAME := libvismode_$(ARCHITECTURE).a
 CC := gcc
 CXX := g++
 STRIP := strip
-CFLAGS := -g -O3 -mtune=i486 -fexpensive-optimizations
+CFLAGS := -g -O3 -march=generic -fexpensive-optimizations
 CXXFLAGS := $(CFLAGS)
 STATICLIB_LDFLAGS := -l
-SCRGUT_CFLAGS := -g -O3 -mtune=i386
+SCRGUT_CFLAGS := -g -O0 -march=generic
 SCRGUT_LIBS := `pkg-config --libs MagickWand-7.Q16HDRI`
-PKGCONF_LIBS := gtkmm-3.0 zlib gl
+PKGCONF_LIBS := gtkmm-3.0 zlib gl glu
 LDFLAGS := -I.$(STATICLIB_PATHPREFIX) $(STATICLIB_LDFLAGS) `pkg-config --libs $(PKGCONF_LIBS)`
 ARFLAGS := rcs
 
@@ -78,7 +94,20 @@ GFXLIB_SRC := $(wildcard src/gfxlib/*.cpp) \
 		$(wildcard src/2d/*.cpp) \
 		$(wildcard src/3d/*.cpp) \
 		$(wildcard src/carmack_helper/*.cpp)\
-		$(wildcard src/3d/models/*.cpp)
+		$(wildcard src/3d/models/*.cpp) \
+		$(wildcard src/2d/gl1_renderer2d/*.cpp) \
+		$(wildcard src/2d/gl2_renderer2d/*.cpp)
+
+## if there's a modern C++ compiler for IRIX...
+
+GFXLIB_IRIS_SRC := $(wildcard src/gfxlib/*.cpp) \
+		$(wildcard src/2d/*.cpp) \
+		$(wildcard src/3d/*.cpp) \
+		$(wildcard src/carmack_helper/*.cpp)\
+		$(wildcard src/3d/models/*.cpp) \
+		$(wildcard src/2d/gl1_renderer2d/*.cpp) \
+		$(wildcard src/2d/gl2_renderer2d/*.cpp) \
+		$(wildcard src/2d/irisgl_renderer2d/*.cpp)
 
 GFXLIB_OBJ := $(GFXLIB_SRC:.cpp=.o)
 GFXLIB_HEADERS := $(GFXLIB_SRC:.cpp=.hpp)
@@ -116,6 +145,12 @@ ANVIL_SRC := src/anvil/gridsys.cpp \
 		src/anvil/tool_system.cpp \
 		src/anvil/planview.cpp
 
+ANVIL_LITE_SRC := src/anvil/planview_lite.cpp \
+		src/anvil/text_label.cpp
+
+ANVIL_LITE_OBJ := $(ANVIL_LITE_SRC:.cpp=.o)
+ANVIL_LITE_HEADERS := $(ANVIL_LITE_SRC:.cpp=.hpp)
+
 ANVIL_OBJ := $(ANVIL_SRC:.cpp=.o)
 ANVIL_HEADERS := $(ANVIL_SRC:.cpp=.hpp)
 
@@ -124,6 +159,7 @@ STATIC_LIBS := $(GFXLIB_NAME) \
 		$(FORGE_NAME) \
 		$(ANVIL_NAME) \
 		$(GODSEND_NAME) \
+		$(IRIS_GODSEND_NAME) \
 		$(VISMODE_NAME)
 
 GODSEND_SRC := $(wildcard src/vendor/gzdoom/rendering/2d/*.cpp) \
@@ -199,5 +235,5 @@ static_libs:
 clean:
 	rm -rf $(STATICLIB_PATHPREFIX)
 
-.PHONY: all,scrgut_bin,libxml2,mkplugins,static_libs,clean
+.PHONY: all,scrgut_bin,libxml2,mkplugins,static_libs,clean,map_loader
 .NOTPARALLEL: static_libs,libxml2,mkplugins,clean

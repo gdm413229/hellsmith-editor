@@ -317,7 +317,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Grid size: </property>
-                <property name="wrap">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
